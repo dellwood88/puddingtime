@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="Puddingtime" constructor="CharCounter" version="1.0.0"
+           display-name-key="Text with Character Counter"
+           description-key="Text input or text area that shows a live 'used / limit' counter and warns as the limit gets close."
+           control-type="standard">
+    <external-service-usage enabled="false"></external-service-usage>
+
+    <type-group name="text">
+      <type>SingleLine.Text</type>
+      <type>SingleLine.TextArea</type>
+      <type>Multiple</type>
+    </type-group>
+
+    <property name="value" display-name-key="Text"
+              description-key="The text column to edit."
+              of-type-group="text" usage="bound" required="true" />
+
+    <property name="maxLength" display-name-key="Character limit"
+              description-key="Maximum characters allowed. Leave empty to use the column's own maximum length."
+              of-type="Whole.None" usage="input" required="false" />
+
+    <property name="warnAt" display-name-key="Warn at (%)"
+              description-key="Counter turns amber at this percentage of the limit. Default 90."
+              of-type="Whole.None" usage="input" required="false" default-value="90" />
+
+    <property name="multiline" display-name-key="Multi-line"
+              description-key="Show a resizable text area instead of a single-line box."
+              of-type="TwoOptions" usage="input" required="false" default-value="false" />
+
+    <property name="placeholder" display-name-key="Placeholder"
+              description-key="Hint text shown when empty."
+              of-type="SingleLine.Text" usage="input" required="false" />
+
+    <resources>
+      <code path="index.ts" order="1" />
+      <css path="css/CharCounter.css" order="1" />
+    </resources>
+  </control>
+</manifest>

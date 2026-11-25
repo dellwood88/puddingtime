@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="Puddingtime" constructor="StarRating" version="1.0.0"
+           display-name-key="Star Rating"
+           description-key="Clickable, keyboard-accessible star rating bound to a whole-number column."
+           control-type="standard">
+    <external-service-usage enabled="false"></external-service-usage>
+
+    <property name="value" display-name-key="Rating"
+              description-key="The rating value (whole number). Empty means not rated."
+              of-type="Whole.None" usage="bound" required="true" />
+
+    <property name="maxStars" display-name-key="Number of stars"
+              description-key="How many stars to show (1-10). Default 5."
+              of-type="Whole.None" usage="input" required="false" default-value="5" />
+
+    <property name="starColor" display-name-key="Star colour"
+              description-key="CSS colour for filled stars, e.g. #f5b301 or gold."
+              of-type="SingleLine.Text" usage="input" required="false" default-value="#f5b301" />
+
+    <resources>
+      <code path="index.ts" order="1" />
+      <css path="css/StarRating.css" order="1" />
+    </resources>
+  </control>
+</manifest>

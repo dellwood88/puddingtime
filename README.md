@@ -8,11 +8,11 @@ Everything here is meant to be copied, imported or adapted into your own apps.
 
 | Component | Type | What it does | Status |
 |-----------|------|--------------|--------|
-| _Nothing yet — see [Adding a component](#adding-a-component)_ | | | |
+| [Star Rating](pcf-controls/StarRating) | PCF control | Clickable, keyboard-accessible star rating for a whole-number column | 🧪 Experimental |
+| [Progress Bar](pcf-controls/ProgressBar) | PCF control | Read-only progress bar for any number column, with label and "complete" colour | 🧪 Experimental |
+| [Text with Character Counter](pcf-controls/CharCounter) | PCF control | Text box / text area with a live "used / limit" counter | 🧪 Experimental |
 
-<!-- Add one row per component, e.g.
-| [Star Rating](pcf-controls/StarRating) | PCF control | 1–5 star input bound to a whole-number column | ✅ Stable |
--->
+<!-- Add one row per component. Status: 🧪 Experimental → ✅ Stable once tested in a live environment. -->
 
 ## Repo layout
 

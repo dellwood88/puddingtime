@@ -1,0 +1,54 @@
+.pud-charcounter {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+}
+
+.pud-charcounter .pud-charcounter__box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6px 8px;
+    font: inherit;
+    font-size: 14px;
+    border: 1px solid #8a8886;
+    border-radius: 4px;
+    background: #fff;
+    color: #323130;
+}
+
+.pud-charcounter textarea.pud-charcounter__box {
+    resize: vertical;
+    min-height: 64px;
+}
+
+.pud-charcounter .pud-charcounter__box:focus {
+    outline: none;
+    border-color: #0f6cbd;
+    box-shadow: 0 0 0 1px #0f6cbd;
+}
+
+.pud-charcounter .pud-charcounter__box:disabled {
+    background: #f3f2f1;
+    color: #605e5c;
+}
+
+.pud-charcounter .pud-charcounter__count {
+    align-self: flex-end;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: inherit;
+    opacity: 0.8;
+}
+
+.pud-charcounter .pud-charcounter__count--warn {
+    color: #bc6f00;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.pud-charcounter .pud-charcounter__count--full {
+    color: #d13438;
+    opacity: 1;
+    font-weight: 600;
+}

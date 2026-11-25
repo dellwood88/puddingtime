@@ -1,0 +1,30 @@
+.pud-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 24px;
+}
+
+.pud-progress .pud-progress__track {
+    flex: 1;
+    height: 10px;
+    border-radius: 5px;
+    background: #edebe9;
+    overflow: hidden;
+}
+
+.pud-progress .pud-progress__fill {
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    transition: width 0.3s ease, background-color 0.3s;
+}
+
+.pud-progress .pud-progress__label {
+    min-width: 3em;
+    text-align: right;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+    color: inherit;
+}

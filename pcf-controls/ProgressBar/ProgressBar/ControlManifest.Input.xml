@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="Puddingtime" constructor="ProgressBar" version="1.0.0"
+           display-name-key="Progress Bar"
+           description-key="Read-only progress bar for any number column, with optional label and colour thresholds."
+           control-type="standard">
+    <external-service-usage enabled="false"></external-service-usage>
+
+    <type-group name="numbers">
+      <type>Whole.None</type>
+      <type>Decimal</type>
+      <type>FP</type>
+      <type>Currency</type>
+    </type-group>
+
+    <property name="value" display-name-key="Value"
+              description-key="The number to show progress for."
+              of-type-group="numbers" usage="bound" required="true" />
+
+    <property name="maxValue" display-name-key="Maximum"
+              description-key="The value that counts as 100%. Default 100."
+              of-type="Decimal" usage="input" required="false" default-value="100" />
+
+    <property name="barColor" display-name-key="Bar colour"
+              description-key="CSS colour for the bar. Default #0f6cbd."
+              of-type="SingleLine.Text" usage="input" required="false" default-value="#0f6cbd" />
+
+    <property name="completeColor" display-name-key="Complete colour"
+              description-key="Optional CSS colour used once the value reaches the maximum."
+              of-type="SingleLine.Text" usage="input" required="false" default-value="#107c10" />
+
+    <property name="showLabel" display-name-key="Show label"
+              description-key="Show the percentage next to the bar."
+              of-type="TwoOptions" usage="input" required="false" default-value="true" />
+
+    <resources>
+      <code path="index.ts" order="1" />
+      <css path="css/ProgressBar.css" order="1" />
+    </resources>
+  </control>
+</manifest>

@@ -1,0 +1,31 @@
+.pud-star-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.pud-star-rating .pud-star {
+    background: none;
+    border: none;
+    padding: 0 2px;
+    margin: 0;
+    font-size: 24px;
+    line-height: 1;
+    color: #c8c6c4;
+    cursor: pointer;
+    transition: transform 0.08s ease-in-out, color 0.08s;
+}
+
+.pud-star-rating .pud-star:not(:disabled):hover {
+    transform: scale(1.15);
+}
+
+.pud-star-rating .pud-star:focus-visible {
+    outline: 2px solid #0f6cbd;
+    outline-offset: 1px;
+    border-radius: 3px;
+}
+
+.pud-star-rating .pud-star:disabled {
+    cursor: default;
+}

@@ -1,0 +1,26 @@
+# Node / PCF build output
+node_modules/
+out/
+bin/
+obj/
+generated/
+*.tsbuildinfo
+
+# Packed Power Platform artifacts (commit unpacked source instead)
+*.zip
+*.msapp
+
+# pac CLI / local auth
+.pac/
+*.pac.auth
+
+# Editors / OS
+.vs/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.pfx

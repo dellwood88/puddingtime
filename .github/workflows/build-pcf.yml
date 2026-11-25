@@ -1,0 +1,40 @@
+name: Build PCF controls
+
+on:
+  push:
+    branches: [main]
+    paths: ['pcf-controls/**', '.github/workflows/build-pcf.yml']
+  pull_request:
+    paths: ['pcf-controls/**', '.github/workflows/build-pcf.yml']
+  workflow_dispatch:
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    outputs:
+      controls: ${{ steps.list.outputs.controls }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: list
+        run: |
+          dirs=$(find pcf-controls -mindepth 2 -maxdepth 2 -name package.json -printf '%h\n' | jq -R . | jq -sc .)
+          echo "controls=${dirs:-[]}" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: find
+    if: needs.find.outputs.controls != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        control: ${{ fromJson(needs.find.outputs.controls) }}
+    defaults:
+      run:
+        working-directory: ${{ matrix.control }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - run: npm ci || npm install
+      - run: npm run build -- --buildMode production
